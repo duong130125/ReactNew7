@@ -1,41 +1,51 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function B10() {
-    const [check,setCheck] = useState<string>("")
+  const [check, setCheck] = useState([]);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setCheck(e.target.value)
-        const isCheck = e.target.checked
-        if (isChecked) {
-        
-            setSelectedHobbies([...check, hobby]);
-          } else {
-
-            setSelectedHobbies(check.filter((item) => item !== hobby));
-          }
+  const handleCheckboxChange = (event:any) => {
+    const { value, checked } = event.target;
+    if (checked) {
+      setCheck([...check, value]);
+    } else {
+      setCheck(check.filter(item => item !== value));
     }
+  };
+
   return (
     <>
-    <h3>Sở thích: [{check}]</h3>
-    <input type="checkbox" 
-    value="Đi Chơi"
-    onChange={handleChange}
-    />Đi Chơi
-    <br />
-    <input type="checkbox" 
-    value="Code"
-    onChange={handleChange}
-    />Code
-    <br />
-    <input type="checkbox" 
-    value="Bội lội"
-    onChange={handleChange}
-    />Bơi lội
-    <br />
-    <input type="checkbox" 
-    value="Đá Bóng"
-    onChange={handleChange}
-    />Đá Bóng
+    <p>Sở thích: {JSON.stringify(check)}</p>
+      <input
+        type="checkbox"
+        value="Đi chơi"
+        checked={check.includes('Đi chơi')}
+        onChange={handleCheckboxChange}
+      />
+      Đi chơi
+      <br />     
+      <input
+        type="checkbox"
+        value="Code"
+        checked={check.includes('Code')}
+        onChange={handleCheckboxChange}
+      />
+      Code
+      <br />
+      <input
+        type="checkbox"
+        value="Bơi lội"
+        checked={check.includes('Bơi lội')}
+        onChange={handleCheckboxChange}
+      />
+      Bơi lội
+      <br />
+      <input
+        type="checkbox"
+        value="Đá Bóng"
+        checked={check.includes('Đá Bóng')}
+        onChange={handleCheckboxChange}
+      />
+      Đá Bóng
     </>
-  )
+  );
 }
