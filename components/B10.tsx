@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function B10() {
-  const [check, setCheck] = useState([]);
+  const [check, setCheck] = useState<string[]>([]);
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = e.target;
