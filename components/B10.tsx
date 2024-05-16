@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 export default function B10() {
   const [check, setCheck] = useState([]);
 
-  const handleCheckboxChange = (event:any) => {
-    const { value, checked } = event.target;
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, checked } = e.target;
     if (checked) {
       setCheck([...check, value]);
     } else {
