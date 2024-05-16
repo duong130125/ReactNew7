@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 export default function B9() {
-    const [gender, setGender] = useState<string>(''); 
+    const [gender, setGender] = useState<string>(""); 
     
     const handleGenderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setGender(e.target.value);

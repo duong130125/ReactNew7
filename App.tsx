@@ -7,7 +7,7 @@ import React from 'react'
 // import B6 from './components/B6'
 // import B7 from './components/B7'
 // import B8 from './components/B8'
-import B9 from './components/B9'
+// import B9 from './components/B9'
 import B10 from './components/B10'
 
 export default function App() {
@@ -21,7 +21,7 @@ export default function App() {
     {/* <B6></B6> */}
     {/* <B7></B7> */}
     {/* <B8></B8> */}
-    <B9></B9>
+    {/* <B9></B9> */}
     <B10></B10>
     </>
   )
